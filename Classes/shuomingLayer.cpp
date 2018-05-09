@@ -15,8 +15,8 @@ using namespace cocos2d;
 int shuomingLayer::A = 1;
 void shuomingLayer::onCreate()
 {
-    FileUtils::getInstance()->addSearchPath("studio");
-    node = CSLoader::createNode("help/bangzhu.csb");
+    FileUtils::getInstance()->addSearchPath("studio/help");
+    node = CSLoader::createNode("bangzhu.csb");
     CCLOG("shuomingLayer");
     this->addChild(node);
     
