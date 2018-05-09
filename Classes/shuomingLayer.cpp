@@ -15,20 +15,21 @@ using namespace cocos2d;
 int shuomingLayer::A = 1;
 void shuomingLayer::onCreate()
 {
-    FileUtils::getInstance()->addSearchPath("studio");
+    FileUtils::getInstance()->addSearchPath("studio/help");
     node = CSLoader::createNode("help/bangzhu.csb");
     CCLOG("shuomingLayer");
     this->addChild(node);
     
-    m_bangzhu = static_cast<ui::Button*>(node->getChildByName("Button_1"));
-    m_guaiwu = static_cast<ui::Button*>(node->getChildByName("Button_2"));
-    m_paota = static_cast<ui::Button*>(node->getChildByName("Button_3"));
     
-    m_bangzhu->addClickEventListener(CC_CALLBACK_1(shuomingLayer::bangzhu,this));
-    m_guaiwu->addClickEventListener(CC_CALLBACK_1(shuomingLayer::guaiwu,this));
-    m_paota->addClickEventListener(CC_CALLBACK_1(shuomingLayer::paota,this));
-    
-    m_fanhui = static_cast<ui::Button*>(node->getChildByName("Button_4"));
+//    m_bangzhu = static_cast<ui::Button*>(node->getChildByName("Button_2"));
+//    m_guaiwu = static_cast<ui::Button*>(node->getChildByName("Button_3"));
+//    m_paota = static_cast<ui::Button*>(node->getChildByName("Button_4"));
+//    
+//    m_bangzhu->addClickEventListener(CC_CALLBACK_1(shuomingLayer::bangzhu,this));
+//    m_guaiwu->addClickEventListener(CC_CALLBACK_1(shuomingLayer::guaiwu,this));
+//    m_paota->addClickEventListener(CC_CALLBACK_1(shuomingLayer::paota,this));
+    /*
+    m_fanhui = static_cast<ui::Button*>(node->getChildByName("Button_1"));
     m_fanhui->addClickEventListener([=](Ref*){
         if (A == 1)
         {
@@ -38,8 +39,7 @@ void shuomingLayer::onCreate()
         {
             SceneMannger::gotoMaoxianScene();
         }
-    });
-
+    });*/
 }
 void shuomingLayer::bangzhu(cocos2d::Ref*)
 {

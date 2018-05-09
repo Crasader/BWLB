@@ -43,12 +43,11 @@ void MaoxianLayer::onCreate()
         layout->setContentSize(Size(400.f, 300.f));
         char str[50];
         sprintf(str,"Chapter/theme_pack%02d.png",i+1);
-//        auto imageView = ui::ImageView::create(str);
-//        imageView->setScale9Enabled(true);
-//        imageView->setContentSize(Size(300, 200));
-//        imageView->setPosition(Vec2(layout->getContentSize().width/2.0f,layout->getContentSize().height/2.0f));
+
         auto bt = ui::Button::create(str);
         bt->setContentSize(Size(200,150));
+        bt->setScale(0.5);
+//        m_vec->pus
         bt->setPosition(Vec2(layout->getContentSize().width/2.0f,layout->getContentSize().height/2.0f));
     
         layout->addChild(bt);
