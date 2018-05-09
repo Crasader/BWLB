@@ -28,7 +28,7 @@ void shuomingLayer::onCreate()
 //    m_bangzhu->addClickEventListener(CC_CALLBACK_1(shuomingLayer::bangzhu,this));
 //    m_guaiwu->addClickEventListener(CC_CALLBACK_1(shuomingLayer::guaiwu,this));
 //    m_paota->addClickEventListener(CC_CALLBACK_1(shuomingLayer::paota,this));
-    /*
+    
     m_fanhui = static_cast<ui::Button*>(node->getChildByName("Button_1"));
     m_fanhui->addClickEventListener([=](Ref*){
         if (A == 1)
@@ -39,7 +39,7 @@ void shuomingLayer::onCreate()
         {
             SceneMannger::gotoMaoxianScene();
         }
-    });*/
+    });
 }
 void shuomingLayer::bangzhu(cocos2d::Ref*)
 {
