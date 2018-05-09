@@ -37,6 +37,8 @@ void FirstLayer::onCreate()
     m_maoxian = static_cast<ui::Button(*)>(node->getChildByName("Button_1"));
     m_maoxian->addClickEventListener(CC_CALLBACK_1(FirstLayer::maoxian, this));
 
+    m_shuoming = static_cast<ui::Button(*)>(node->getChildByName("Button_4"));
+    m_shuoming->addClickEventListener(CC_CALLBACK_1(FirstLayer::shuoming, this));
     
 }
 void FirstLayer::onActive()
@@ -60,7 +62,9 @@ void FirstLayer::shezhi(cocos2d::Ref*)
 }
 void FirstLayer::shuoming(cocos2d::Ref*)
 {
+    CCLOG("goto shuoming");
 //    UIManager::CreateLayer(UIManager::SHUOMING);
+    SceneMannger::goToHelpScene();
     }
 void FirstLayer::dong()
 {
