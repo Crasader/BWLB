@@ -26,6 +26,7 @@ public:
     
     void fanhui(cocos2d::Ref*);
     void help(cocos2d::Ref*);
+    void charpterOne(cocos2d::Ref*);
     
     
 private:

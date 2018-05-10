@@ -17,7 +17,7 @@ void FirstLayer::onCreate()
 {
 //    m_layer =
     FileUtils::getInstance()->addSearchPath("studio");
-    auto node = CSLoader::createNode("MainScene.csb");
+    auto node = CSLoader::createNode("zhujiemian.csb");
     CCLOG("FirstLayer");
     this->addChild(node);
 //    auto s = Sprite::create("bird.png");
@@ -25,20 +25,47 @@ void FirstLayer::onCreate()
 //    this->addChild(s);
     
 //    m_rye = Sprite::create();
-    m_rye = node->getChildByName("Sprite_9");
-    m_lye = static_cast<Sprite(*)>(node->getChildByName("Sprite_8"));
+//    m_rye = node->getChildByName("Sprite_9");
+//    m_lye = static_cast<Sprite(*)>(node->getChildByName("Sprite_8"));
+//    
+//    m_bird = static_cast<Sprite(*)>(node->getChildByName("Sprite_3"));
+//    
+//    dong();
+    auto action = CSLoader::createTimeline("zhujiemian.csb");
+    action->gotoFrameAndPlay(0,120,true);
+    node->runAction(action);
+
     
-    m_bird = static_cast<Sprite(*)>(node->getChildByName("Sprite_3"));
-    
-    dong();
-    m_shezhi = static_cast<ui::Button(*)>(node->getChildByName("Button_5"));
+    m_shezhi = static_cast<ui::Button(*)>(node->getChildByName("Button_2"));
     m_shezhi->addClickEventListener(CC_CALLBACK_1(FirstLayer::shezhi, this));
     
-    m_maoxian = static_cast<ui::Button(*)>(node->getChildByName("Button_1"));
+    m_maoxian = static_cast<ui::Button(*)>(node->getChildByName("Button_4"));
     m_maoxian->addClickEventListener(CC_CALLBACK_1(FirstLayer::maoxian, this));
 
-    m_shuoming = static_cast<ui::Button(*)>(node->getChildByName("Button_4"));
+    m_shuoming = static_cast<ui::Button(*)>(node->getChildByName("Button_3"));
     m_shuoming->addClickEventListener(CC_CALLBACK_1(FirstLayer::shuoming, this));
+    
+    m_heart = static_cast<ui::Button(*)>(node->getChildByName("Button_1"));
+    m_heart->addClickEventListener([=](Ref*){
+        
+        //触摸吞噬
+        auto m_layout = ui::Layout::create();
+        m_layout->setContentSize(Size(480,320));
+        this->addChild(m_layout);
+        m_layout->setTouchEnabled(true);
+        m_layout->setSwallowTouches(true);
+        
+        auto node = CSLoader::createNode("Layer.csb");
+        CCLOG("HeartLayer");
+        this->addChild(node);
+        
+        auto cha = static_cast<ui::Button(*)>(node->getChildByName("Button_1"));
+        cha->addClickEventListener([=](Ref*)mutable{
+            m_layout->removeFromParent();
+            node->setVisible(false);
+        });
+    });
+    
     
 }
 void FirstLayer::onActive()

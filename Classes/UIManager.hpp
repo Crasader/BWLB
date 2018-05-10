@@ -19,6 +19,7 @@ public:
         MAOXIAN,
         SHEZHI,
         SHUOMING,
+        CHOOSE,
     };
     static UIBaseLayer* CreateLayer(LayerType type);
     static void DestroyLayer();

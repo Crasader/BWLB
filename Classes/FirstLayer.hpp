@@ -38,6 +38,7 @@ private:
     cocos2d::Sprite* m_lye;
     cocos2d::Node* m_rye;
     cocos2d::Sprite* m_yun;
+    cocos2d::ui::Button* m_heart;
     
     cocos2d::ui::Button* m_shezhi;
     cocos2d::ui::Button* m_shuoming;//设置界面
