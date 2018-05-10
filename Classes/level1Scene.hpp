@@ -30,6 +30,9 @@ private:
     
     cocos2d::Sprite* lb;
     cocos2d::Sprite* sp;
+    
+    cocos2d::Vec2 startPos;
+    cocos2d::TMXObjectGroup* guaiwuLayer;
 };
 
 #endif /* level1Scene_hpp */

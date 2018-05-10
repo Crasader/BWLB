@@ -14,6 +14,14 @@
 
 class Bird:public cocos2d::Sprite
 {
+public:
+    CREATE_FUNC(Bird);
+    
+    bool init()override;
+private:
+    cocos2d::Vector<cocos2d::Texture2D*> vec;
+    
+    cocos2d::Sprite* m_blood;
     
 };
 
