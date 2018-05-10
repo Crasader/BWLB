@@ -12,6 +12,7 @@
 #include "HelpScene.hpp"
 #include "ShezhiScene.hpp"
 #include "MaoxianScene.hpp"
+#include "level1Scene.hpp"
 USING_NS_CC;
 void SceneMannger::goToFirstScene()
 {
@@ -35,3 +36,11 @@ void SceneMannger::gotoMaoxianScene()
     auto maoxianScene = MaoxianScene::createScene();
     Director::getInstance()->replaceScene(maoxianScene);
 }
+void SceneMannger::gotoLevel1Scene()
+{
+    auto level1Scene = Level1Scene::createScene();
+    Director::getInstance()->replaceScene(level1Scene);
+}
+
+
+

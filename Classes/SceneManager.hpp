@@ -18,5 +18,6 @@ public:
     static void goToHelpScene();
     static void gotoShezhiScene();
     static void gotoMaoxianScene();
+    static void gotoLevel1Scene();
 };
 #endif /* SceneManager_hpp */
